@@ -89,11 +89,11 @@ All the work is done in `particle_filter.cpp`. The structure is as follows:
 `void ParticleFilter::dataAssociation(vector<LandmarkObs> predicted, vector<LandmarkObs>& observations)`  
   
 4. STEP: UPDATE THE PARTICLES WEIGHTS:  
-  1. Transform observations from vehicle's coordinates to map coordinates.  
-  2. Filter on landmarks that are in range of the LiDAR.  
-  3. Associate observations with predicted landmarks  
-  4. Update the weights of each particle using a multvariate Gaussian distribution  
-  5. Normalize the weights of all particles for the resampling step  
+  - Transform observations from vehicle's coordinates to map coordinates.  
+  - Filter on landmarks that are in range of the LiDAR.  
+  - Associate observations with predicted landmarks  
+  - Update the weights of each particle using a multvariate Gaussian distribution  
+  - Normalize the weights of all particles for the resampling step  
 `void ParticleFilter::updateWeights(double sensor_range, double std_landmark[], const vector<LandmarkObs> &observations, const Map &map_landmarks)`
   
 5. STEP: RESAMPLE PARTICLES WITH REPLACEMENT WITH PROBABILITY PROPORTIONAL TO THEIR WEIGHT: With use of Resampling Wheel technique  
